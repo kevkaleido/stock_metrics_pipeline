@@ -90,20 +90,20 @@ for ticker in tickers:
         print(f'Creating Dataframe for {year} {company_name} {ticker} stock for ')   
         new_data=pd.DataFrame({'Ticker': ticker,
                                'Year': year,
-                            'CompanyName': company_name,
-                            'Annual_TSR': round(annual_tsr, 4),
-                            'AnnualVolatility': round(annualized_volatility,  4),
-                            'SharpeRatio': round(sharpe_ratio, 2),
-                            'MaxDailyProfit': round(max_daily_profit, 4),
-                            'MaxDP_Date': max_daily_profit_date,
-                            'MinDailyProfit': round(min_daily_profit, 4),
-                            'MinDP_Date': min_daily_profit_date,
-                            'MarketCap': market_cap,
-                            'Sector': sector,
-                            'industry': industry,
-                            'Complete_Year': is_complete,
-                            'TradingDays': len(year_data),
-                            'LastUpdated': datetime.now()}, index=[0])
+                               'CompanyName': company_name,
+                               'Annual_TSR': round(annual_tsr, 4),
+                               'AnnualVolatility': round(annualized_volatility,  4),
+                               'SharpeRatio': round(sharpe_ratio, 2),
+                               'MaxDailyProfit': round(max_daily_profit, 4),
+                               'MaxDP_Date': max_daily_profit_date,
+                               'MinDailyProfit': round(min_daily_profit, 4),
+                               'MinDP_Date': min_daily_profit_date,
+                               'MarketCap': market_cap,
+                               'Sector': sector,
+                               'industry': industry,
+                               'CompleteYear': is_complete,
+                               'TradingDays': len(year_data),
+                               'LastUpdated': datetime.now()}, index=[0])
         
 
 
@@ -122,17 +122,16 @@ connection_str = f'mssql+pyodbc://{DB_SERVER}/{DB_NAME}?driver=ODBC+Driver+17+fo
 engine = create_engine(connection_str)     
 print('Inserting Data into Sql Server')
 final_data.to_sql(TABLE_STOCK_YEARLY, engine, if_exists= 'replace', index=False) #load to Sql Server
-
 print(f'{len(final_data)} rows of stock data added to MS server')
 
 
-#saving the data as csv with timestamps
-directory = os.getcwd()
-timestamp = datetime.now()
-timestamp = timestamp.strftime('%Y%m%d_%H%M%S')    #format timestamp to string 
-filename = f'stock_metrics_yearly{timestamp}.csv'
-final_data.to_csv(filename, index=False)
-print(f'{len(final_data)} rows of stock data saved successfully to {directory}')
 
+#saving the data as csv with timestamps
+directory = r'c:\Users\user\stock_metrics_pipeline\cv_save'
+timestamp = datetime.now()
+timestamp = timestamp.strftime('%Y_%m_%d__%H_%M_%S')    #format timestamp to string 
+filename = f'stock_metrics_yearly {timestamp}.csv'
+final_data.to_csv(os.path.join(directory, filename), index=False) #to be saved in the directory path
+print(f'{len(final_data)} rows of stock data saved successfully to {directory}')
 
 

@@ -53,7 +53,7 @@ for ticker in index_tickers:
             monthly_tsr = (last_close - first_close)/ first_close
             month_last_day = month_data.index[-1]                     #Gets the last trading day of the month
 
-            #Call the function we created above: Pass the entire stock dataset, Pass the last day of the current month as the end point and Request 252 days of history
+            #Call the function we created above: Pass the entire index dataset, Pass the last day of the current month as the end point and Request 252 days of history
             rolling_daily_return = get_rolling_daily_return(index_data, month_last_day, window_days=252)
             daily_volatility = rolling_daily_return.std()                           #Calculates standard deviation of the 252 daily returns.
             monthly_volatility_rolling = daily_volatility * (len(month_data)**0.5)  #Scales daily volatility to monthly volatility using the square root of time rule.
@@ -74,17 +74,17 @@ for ticker in index_tickers:
             monthly_data = pd.DataFrame({'Ticker': ticker,
                                      'Year': year,
                                      'Month': month,
-                                     'MonthName': month_name,
+                                     'Month_Name': month_name,
                                      'IndexName': name,              
                                      'Monthly_TSR': round(monthly_tsr, 4),
                                      'MonthlyVolatility' : round(monthly_volatility, 4), 
                                      'MonthlyVolatiltyRolling': round(monthly_volatility_rolling, 4),
                                      'MonthlySharpe': round(monthly_sharpe_ratio, 2),
-                                     'MonthlySharpeRolling': round(monthly_sharpe_ratio_rolling, 2),
+                                     'MonthlySharpe_Rolling': round(monthly_sharpe_ratio_rolling, 2),
                                      'FirstClose': round(first_close, 4),
                                      'LastClose': round(last_close, 4),
-                                     'TradingDays': len(month_data),
-                                     'Complete_Month' : is_month_complete,
+                                     'Trading_Days': len(month_data),
+                                     'CompleteMonth' : is_month_complete,
                                      'LastUpdated': datetime.now() }
                                      )
             data.append(monthly_data)
@@ -95,19 +95,19 @@ final_data
 
 #saving to microsoft server  
 
-#create connection string, after importing pyodbc and from sqlalchemy, importing create_engine-- these are language tranlators to write to sql server
+#create connection string, after importing pyodbc and from sqlalchemy, importing create_engine -- these are language tranlators to write to sql server
 connection_str = f'mssql+pyodbc://{DB_SERVER}/{DB_NAME}?driver=ODBC+Driver+17+for+Sql+Server&trusted_connection=yes'
 engine = create_engine(connection_str)     
 print('Inserting Data into Sql Server')
 final_data.to_sql(TABLE_INDEX_MONTHLY, engine, if_exists= 'replace', index=False) #load to Sql Server
 
-print(f'{len(final_data)} rows of stock data added to MS server')
+print(f'{len(final_data)} rows of index data added to MS server')
 
 
 #saving the data as csv with timestamps
-directory = os.getcwd()
+directory = r'c:\Users\user\stock_metrics_pipeline\cv_save'
 timestamp = datetime.now()
-timestamp = timestamp.strftime('%Y%m%d_%H%M%S')    #format timestamp to string 
-filename = f'index_metrics_monthly{timestamp}.csv'
-final_data.to_csv(filename, index=False)
-print(f'{len(final_data)} rows of data saved successfully to {directory}')
+timestamp = timestamp.strftime('%Y_%m_%d__%H_%M_%S')    #format timestamp to string 
+filename = f'index_metrics_monthly {timestamp}.csv'
+final_data.to_csv(os.path.join(directory, filename), index=False) #to be saved in the directory path
+print(f'{len(final_data)} rows of index data saved successfully to {directory}')

@@ -50,7 +50,7 @@ for ticker in index_tickers:
                                     'Region': info.get('region'),
                                     'Annual_TSR' : round(annual_tsr,4),
                                     'AnnualVolatility': round(annual_volatility,4),
-                                    'Sharpe_Ratio' : round(sharpe_ratio, 2),
+                                    'SharpeRatio' : round(sharpe_ratio, 2),
                                     'MaxDailyProfit': daily_returns.max(),
                                     'MaxDP_Date': daily_returns.idxmax().strftime('%Y-%m-%d'),
                                     'MinDailyProfit': daily_returns.min(),
@@ -77,9 +77,9 @@ print(f'{len(final_data)} rows of index data added to MS server')
 
 
 #saving the data as csv with timestamps
-directory = os.getcwd()
+directory = r'c:\Users\user\stock_metrics_pipeline\cv_save'
 timestamp = datetime.now()
-timestamp = timestamp.strftime('%Y%m%d_%H%M%S')    #format timestamp to string 
-filename = f'index_metrics_yearly{timestamp}.csv'
-final_data.to_csv(filename, index=False)
+timestamp = timestamp.strftime('%Y_%m_%d__%H_%M_%S')    #format timestamp to string 
+filename = f'index_metrics_yearly {timestamp}.csv'
+final_data.to_csv(os.path.join(directory, filename), index=False) #to be saved in the directory path
 print(f'{len(final_data)} rows of index data saved successfully to {directory}')

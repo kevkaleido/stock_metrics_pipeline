@@ -16,7 +16,7 @@ import pandas
 from sqlalchemy import create_engine
 from datetime import datetime
 import calendar
-from config import  STOCK_TICKERS,START_DATE, END_YEAR, DB_NAME, DB_SERVER, TABLE_STOCK_MONTHLY
+from config import  STOCK_TICKERS, START_DATE, END_YEAR, DB_NAME, DB_SERVER, TABLE_STOCK_MONTHLY
 
 def get_rolling_daily_return(stock, end_date, window_days = 252):   #defines a rolling daily return function to be called and used to calculate monthly sharpe
     data_up_to_date = stock[stock.index <= end_date]                 #Filters the DataFrame to include only data from the beginning up to and including end_date   
@@ -97,7 +97,7 @@ for ticker in tickers:
                                      'FirstClose': round(first_close, 4),
                                      'LastClose': round(last_close, 4),
                                      'TradingDays': len(month_data),
-                                     'Complete_Month' : is_month_complete,
+                                     'CompleteMonth' : is_month_complete,
                                      'LastUpdated': datetime.now() }
                                      )
             data.append(monthly_data)
@@ -116,11 +116,11 @@ print(f'{len(final_data)} rows of stock data added to MS server')
 
 
 #saving the data as csv with timestamps
-directory = os.getcwd()
+directory = r'c:\Users\user\stock_metrics_pipeline\cv_save'
 timestamp = datetime.now()
-timestamp = timestamp.strftime('%Y%m%d_%H%M%S')    #format timestamp to string 
-filename = f'stock_metrics_monthly{timestamp}.csv'
-final_data.to_csv(filename, index=False)
+timestamp = timestamp.strftime('%Y_%m_%d__%H_%M_%S')    #format timestamp to string 
+filename = f'stock_metrics_monthly {timestamp}.csv'
+final_data.to_csv(os.path.join(directory, filename), index=False) #to be saved in the directory path
 print(f'{len(final_data)} rows of stock data saved successfully to {directory}')
 
          
