@@ -41,6 +41,10 @@ for ticker in index_tickers:
         
         #check if year is complete
         is_complete = year < (datetime.now().year)
+        if is_complete:
+            is_complete = 'yes'
+        elif is_complete == False:
+            is_complete = 'no'
      
     #create a dataframe to save metrics values in
         print(f'Creating DataFrame for {year} {ticker} for {name}')

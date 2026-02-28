@@ -1,16 +1,11 @@
 
 from datetime import datetime
+from Stocks_and_Indices import ALL_STOCKS, ALL_INDICES
 
 # STOCKS & INDICES
-STOCK_TICKERS = [
-    "AAPL", "MSFT"
-]
+STOCK_TICKERS = ALL_STOCKS
 
-INDEX_TICKERS = [
-    "^GSPC",   # S&P 500
-    "^DJI",    # Dow Jones
-    "^IXIC",   # NASDAQ
-]
+INDEX_TICKERS = ALL_INDICES
 
 # DATE RANGE
 START_DATE = "2020-01-01"
@@ -19,7 +14,7 @@ END_YEAR = datetime.now().year  # always current year
 
 # DATABASE
 DB_SERVER = r"localhost\SQLEXPRESS"
-DB_NAME = "stock_metrics"
+DB_NAME = "StockIndex"
 DB_DRIVER = "ODBC+Driver+17+for+SQL+Server"
 
 # TABLE NAMES

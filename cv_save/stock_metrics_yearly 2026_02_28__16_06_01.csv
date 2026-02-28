@@ -1,0 +1,29 @@
+Ticker,Year,CompanyName,Annual_TSR,AnnualVolatility,SharpeRatio,MaxDailyProfit,MaxDP_Date,MinDailyProfit,MinDP_Date,MarketCap,Sector,industry,CompleteYear,TradingDays,LastUpdated
+9988.HK,2020,Alibaba Group Holding Limited,0.1057,0.4145,0.26,0.1001,2020-07-09,-0.098,2020-11-11,4405659651012.859,Consumer Cyclical,Internet Retail,yes,248,2026-02-28 16:05:46.674834
+9988.HK,2021,Alibaba Group Holding Limited,-0.4776,0.4545,-1.05,0.1224,2021-12-07,-0.1071,2021-11-19,2255955919104.8374,Consumer Cyclical,Internet Retail,yes,247,2026-02-28 16:05:46.690190
+9988.HK,2022,Alibaba Group Holding Limited,-0.25,0.7162,-0.35,0.273,2022-03-16,-0.1193,2022-03-15,1636469289533.1812,Consumer Cyclical,Internet Retail,yes,246,2026-02-28 16:05:46.707594
+9988.HK,2023,Alibaba Group Holding Limited,-0.1346,0.4023,-0.33,0.1223,2023-03-29,-0.0996,2023-11-17,1436907551125.3462,Consumer Cyclical,Internet Retail,yes,243,2026-02-28 16:05:46.720995
+9988.HK,2024,Alibaba Group Holding Limited,0.134,0.374,0.36,0.0757,2024-02-06,-0.0881,2024-10-08,1578992119050.465,Consumer Cyclical,Internet Retail,yes,246,2026-02-28 16:05:46.728101
+9988.HK,2025,Alibaba Group Holding Limited,0.7818,0.5168,1.51,0.185,2025-09-01,-0.1798,2025-04-07,2723465513628.619,Consumer Cyclical,Internet Retail,yes,246,2026-02-28 16:05:46.774947
+9988.HK,2026,Alibaba Group Holding Limited,-0.0409,0.1622,-0.25,0.0569,2026-01-14,-0.0491,2026-02-20,2729194871087.881,Consumer Cyclical,Internet Retail,no,38,2026-02-28 16:05:46.792245
+0700.HK,2020,Tencent Holdings Limited,0.4881,0.3741,1.3,0.0794,2020-07-21,-0.0739,2020-11-11,4557499648547.906,Communication Services,Internet Content & Information,yes,248,2026-02-28 16:05:51.525941
+0700.HK,2021,Tencent Holdings Limited,-0.1966,0.4148,-0.47,0.1093,2021-01-25,-0.0898,2021-07-27,3689088178329.0674,Communication Services,Internet Content & Information,yes,247,2026-02-28 16:05:51.540892
+0700.HK,2022,Tencent Holdings Limited,-0.234,0.5357,-0.44,0.2315,2022-03-16,-0.1143,2022-10-24,2792828520105.704,Communication Services,Internet Content & Information,yes,246,2026-02-28 16:05:51.557709
+0700.HK,2023,Tencent Holdings Limited,-0.0906,0.3482,-0.26,0.0818,2023-03-23,-0.1235,2023-12-22,2603213397665.026,Communication Services,Internet Content & Information,yes,243,2026-02-28 16:05:51.570555
+0700.HK,2024,Tencent Holdings Limited,0.4393,0.2945,1.49,0.0607,2024-09-26,-0.0832,2024-10-08,3754322491279.975,Communication Services,Internet Content & Information,yes,246,2026-02-28 16:05:51.583864
+0700.HK,2025,Tencent Holdings Limited,0.4634,0.3165,1.46,0.0762,2025-03-06,-0.1254,2025-04-07,5403692639884.0,Communication Services,Internet Content & Information,yes,246,2026-02-28 16:05:51.594967
+0700.HK,2026,Tencent Holdings Limited,-0.1685,0.1026,-1.64,0.0307,2026-02-23,-0.0396,2026-02-04,4672976272888.0,Communication Services,Internet Content & Information,no,38,2026-02-28 16:05:51.608793
+1299.HK,2020,AIA Group Limited,0.1649,0.3455,0.48,0.07,2020-03-20,-0.0941,2020-05-22,895732713103.9845,Financial Services,Insurance - Life,yes,248,2026-02-28 16:05:56.313682
+1299.HK,2021,AIA Group Limited,-0.1756,0.3006,-0.58,0.0629,2021-05-14,-0.0533,2021-03-12,747998906723.3248,Financial Services,Insurance - Life,yes,247,2026-02-28 16:05:56.339282
+1299.HK,2022,AIA Group Limited,0.1409,0.3614,0.39,0.0879,2022-11-11,-0.0948,2022-10-24,842221599307.9113,Financial Services,Insurance - Life,yes,246,2026-02-28 16:05:56.383549
+1299.HK,2023,AIA Group Limited,-0.1943,0.2747,-0.71,0.039,2023-12-15,-0.0509,2023-03-16,673981910459.8506,Financial Services,Insurance - Life,yes,243,2026-02-28 16:05:56.480487
+1299.HK,2024,AIA Group Limited,-0.0929,0.3249,-0.29,0.0747,2024-09-27,-0.1033,2024-10-08,572717813458.4253,Financial Services,Insurance - Life,yes,246,2026-02-28 16:05:56.517923
+1299.HK,2025,AIA Group Limited,0.5217,0.3094,1.69,0.0651,2025-04-30,-0.1148,2025-04-07,837972460815.4973,Financial Services,Insurance - Life,yes,246,2026-02-28 16:05:56.561219
+1299.HK,2026,AIA Group Limited,0.042,0.1279,0.33,0.0409,2026-01-27,-0.0554,2026-02-06,908065087911.0054,Financial Services,Insurance - Life,no,38,2026-02-28 16:05:56.590821
+2318.HK,2020,"Ping An Insurance (Group) Company of China, Ltd.",0.079,0.2294,0.34,0.0623,2020-07-06,-0.0431,2020-01-21,537108585094.339,Financial Services,Insurance - Life,yes,248,2026-02-28 16:06:01.310393
+2318.HK,2021,"Ping An Insurance (Group) Company of China, Ltd.",-0.3431,0.2956,-1.16,0.0754,2021-10-21,-0.0578,2021-09-20,329545164306.5437,Financial Services,Insurance - Life,yes,247,2026-02-28 16:06:01.340163
+2318.HK,2022,"Ping An Insurance (Group) Company of China, Ltd.",0.0494,0.5124,0.1,0.1353,2022-11-11,-0.1263,2022-03-15,322007157564.7139,Financial Services,Insurance - Life,yes,246,2026-02-28 16:06:01.360843
+2318.HK,2023,"Ping An Insurance (Group) Company of China, Ltd.",-0.233,0.3684,-0.63,0.0902,2023-04-27,-0.0541,2023-11-08,232496001620.38727,Financial Services,Insurance - Life,yes,243,2026-02-28 16:06:01.378450
+2318.HK,2024,"Ping An Insurance (Group) Company of China, Ltd.",0.5381,0.445,1.21,0.1286,2024-10-02,-0.1583,2024-10-08,325084499163.04926,Financial Services,Insurance - Life,yes,246,2026-02-28 16:06:01.397315
+2318.HK,2025,"Ping An Insurance (Group) Company of China, Ltd.",0.6273,0.3072,2.04,0.0671,2025-12-05,-0.1301,2025-04-07,486326795081.801,Financial Services,Insurance - Life,yes,246,2026-02-28 16:06:01.416113
+2318.HK,2026,"Ping An Insurance (Group) Company of China, Ltd.",0.018,0.1382,0.13,0.0496,2026-01-06,-0.0464,2026-02-26,506435230016.0,Financial Services,Insurance - Life,no,38,2026-02-28 16:06:01.432957

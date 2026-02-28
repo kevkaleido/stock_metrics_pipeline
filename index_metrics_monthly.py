@@ -69,12 +69,17 @@ for ticker in index_tickers:
             month_name = calendar.month_name[month]  
             #check if month in loop is less than current month, if it is, then true, month is complete, otherwise, false, month is not complete
             is_month_complete =  (year < datetime.now().year) or (year == datetime.now().year and month < datetime.now().month)
-            
+            if is_month_complete:
+                is_month_complete = 'yes'
+            elif is_month_complete == False:
+                is_month_complete = 'no'
+                
+
             #create a dataframe
             monthly_data = pd.DataFrame({'Ticker': ticker,
                                      'Year': year,
                                      'Month': month,
-                                     'Month_Name': month_name,
+                                     'MonthName': month_name,
                                      'IndexName': name,              
                                      'Monthly_TSR': round(monthly_tsr, 4),
                                      'MonthlyVolatility' : round(monthly_volatility, 4), 

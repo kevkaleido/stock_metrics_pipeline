@@ -84,6 +84,10 @@ for ticker in tickers:
 
     #check if current year in loop is less than current year, if it is, then true, year is complete, otherwise, false, year is not complete
         is_complete = (year < datetime.now().year)
+        if is_complete:
+            is_complete = 'yes'
+        elif is_complete == False:
+            is_complete = 'no'
 
 
     #create a dataframe 
